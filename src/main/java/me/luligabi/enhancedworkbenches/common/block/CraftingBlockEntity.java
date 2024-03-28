@@ -1,7 +1,6 @@
 package me.luligabi.enhancedworkbenches.common.block;
 
 import com.google.common.base.Preconditions;
-import me.luligabi.enhancedworkbenches.common.screenhandler.SimpleRecipeInputInventory;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
@@ -28,17 +27,9 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     protected CraftingBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
         super(blockEntityType, blockPos, blockState);
-        input = new SimpleRecipeInputInventory(3*3) {
-
-            @Override
-            public void markDirty() {
-                super.markDirty();
-                CraftingBlockEntity.this.markDirty();
-                sync();
-            }
-        };
+        input = new SimpleInventory(3*3);
+        input.addListener(i -> { markDirty(); sync(); });
     }
-    
 
     @Nullable
     @Override
@@ -59,9 +50,9 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     @Override
     public final void readNbt(NbtCompound nbt) {
-        if (nbt.contains("#c")) {
+        if(nbt.contains("#c")) {
             fromClientTag(nbt);
-            if (nbt.getBoolean("#c")) {
+            if(nbt.getBoolean("#c")) {
                 remesh();
             }
         } else {
@@ -108,7 +99,7 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     public void sync(boolean shouldRemesh) {
         Preconditions.checkNotNull(world); // Maintain distinct failure case from below
-        if (!(world instanceof ServerWorld serverWorld))
+        if(!(world instanceof ServerWorld serverWorld))
             throw new IllegalStateException("Cannot call sync() on the logical client! Did you check world.isClient first?");
 
         shouldClientRemesh = shouldRemesh | shouldClientRemesh;
@@ -121,7 +112,7 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     public final void remesh() {
         Preconditions.checkNotNull(world);
-        if (!(world instanceof ClientWorld))
+        if(!(world instanceof ClientWorld))
             throw new IllegalStateException("Cannot call remesh() on the server!");
 
         world.updateListeners(pos, null, null, 0);
@@ -155,6 +146,6 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
     }
 
 
-    protected SimpleRecipeInputInventory input;
+    protected SimpleInventory input;
     private boolean shouldClientRemesh = true;
 }

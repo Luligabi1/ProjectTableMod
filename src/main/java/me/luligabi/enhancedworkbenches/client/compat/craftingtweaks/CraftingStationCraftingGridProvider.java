@@ -24,7 +24,7 @@ public class CraftingStationCraftingGridProvider implements CraftingGridProvider
 
     @Override
     public void buildCraftingGrids(CraftingGridBuilder craftingGridBuilder, ScreenHandler screenHandler) {
-        if (screenHandler instanceof CraftingStationScreenHandler) {
+        if(screenHandler instanceof CraftingStationScreenHandler) {
             craftingGridBuilder.addGrid(1, 9);
         }
     }

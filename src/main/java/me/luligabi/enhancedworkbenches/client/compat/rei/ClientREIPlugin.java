@@ -32,7 +32,7 @@ public class ClientREIPlugin implements REIClientPlugin {
         registry.register(new SimpleTransferHandler() {
             @Override
             public ApplicabilityResult checkApplicable(Context context) {
-                if (!(context.getMenu() instanceof ProjectTableScreenHandler)
+                if(!(context.getMenu() instanceof ProjectTableScreenHandler)
                         || !BuiltinPlugin.CRAFTING.equals(context.getDisplay().getCategoryIdentifier())
                         || context.getContainerScreen() == null) {
                     return ApplicabilityResult.createNotApplicable();

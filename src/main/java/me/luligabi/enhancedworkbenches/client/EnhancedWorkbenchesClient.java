@@ -29,12 +29,12 @@ public class EnhancedWorkbenchesClient implements ClientModInitializer {
     public static final ClientConfig CLIENT_CONFIG;
 
     static {
-        LOGGER = LoggerFactory.getLogger("Project Table Mod");
+        LOGGER = LoggerFactory.getLogger("Enhanced Workbenches");
 
         ClientConfig.HANDLER.load();
         CLIENT_CONFIG = ClientConfig.HANDLER.instance();
 
-        if (FabricLoader.getInstance().isModLoaded("craftingtweaks")) {
+        if(FabricLoader.getInstance().isModLoaded("craftingtweaks")) {
             try {
                 Class.forName("me.luligabi.enhancedworkbenches.client.compat.craftingtweaks.ProjectTableCraftingGridProvider").getConstructor().newInstance();
                 Class.forName("me.luligabi.enhancedworkbenches.client.compat.craftingtweaks.CraftingStationCraftingGridProvider").getConstructor().newInstance();
