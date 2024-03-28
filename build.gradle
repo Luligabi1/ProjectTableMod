@@ -117,7 +117,12 @@ publishMods {
         }
         optional {
             slug = "roughly-enough-items"
+        }
+        optional {
             slug = "crafting-tweaks-fabric"
+        }
+        optional {
+            slug = "quickbench"
         }
     }
 
@@ -131,7 +136,12 @@ publishMods {
         }
         optional {
             slug = "rei"
+        }
+        optional {
             slug = "crafting-tweaks"
+        }
+        optional {
+            slug = "quickbench"
         }
     }
 
