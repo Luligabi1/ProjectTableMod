@@ -25,11 +25,11 @@ public class ProjectTableCraftingGridProvider implements CraftingGridProvider {
 
     @Override
     public void buildCraftingGrids(CraftingGridBuilder craftingGridBuilder, ScreenHandler screenHandler) {
-        if (screenHandler instanceof ProjectTableScreenHandler) {
+        if(screenHandler instanceof ProjectTableScreenHandler) {
             craftingGridBuilder.addGrid(1, 9)
                     .clearHandler((craftingGrid, playerEntity, screenHandler1, forced) -> {
                         // Put items from the crafting grid to the inventory of the table and only then to inventory.
-                        for (int i = 1; i < 10; i++) {
+                        for(int i = 1; i < 10; i++) {
                             screenHandler.quickMove(playerEntity, i);
                         }
 

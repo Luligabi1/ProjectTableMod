@@ -51,13 +51,13 @@ public class CraftingStationScreenHandler extends CraftingBlockScreenHandler {
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int index) {
-        if (EnhancedWorkbenches.QUICKBENCH && index == 0) {
+        if(EnhancedWorkbenches.QUICKBENCH && index == 0) {
             return MixinHooks.handleShiftCraft(player, this, slots.get(index), input, result, 10, 46);
         }
 
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = slots.get(index);
-        if (slot != null && slot.hasStack()) {
+        if(slot != null && slot.hasStack()) {
             ItemStack itemStack2 = slot.getStack();
             itemStack = itemStack2.copy();
             if(index == 0) {

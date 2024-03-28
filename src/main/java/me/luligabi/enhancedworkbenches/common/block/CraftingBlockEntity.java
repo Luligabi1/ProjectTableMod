@@ -50,9 +50,9 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     @Override
     public final void readNbt(NbtCompound nbt) {
-        if (nbt.contains("#c")) {
+        if(nbt.contains("#c")) {
             fromClientTag(nbt);
-            if (nbt.getBoolean("#c")) {
+            if(nbt.getBoolean("#c")) {
                 remesh();
             }
         } else {
@@ -99,7 +99,7 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     public void sync(boolean shouldRemesh) {
         Preconditions.checkNotNull(world); // Maintain distinct failure case from below
-        if (!(world instanceof ServerWorld serverWorld))
+        if(!(world instanceof ServerWorld serverWorld))
             throw new IllegalStateException("Cannot call sync() on the logical client! Did you check world.isClient first?");
 
         shouldClientRemesh = shouldRemesh | shouldClientRemesh;
@@ -112,7 +112,7 @@ public abstract class CraftingBlockEntity extends BlockEntity implements NamedSc
 
     public final void remesh() {
         Preconditions.checkNotNull(world);
-        if (!(world instanceof ClientWorld))
+        if(!(world instanceof ClientWorld))
             throw new IllegalStateException("Cannot call remesh() on the server!");
 
         world.updateListeners(pos, null, null, 0);

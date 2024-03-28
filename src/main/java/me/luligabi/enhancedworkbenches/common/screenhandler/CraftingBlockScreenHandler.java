@@ -61,7 +61,7 @@ public abstract class CraftingBlockScreenHandler extends ScreenHandler {
     @Override
     public void onContentChanged(Inventory inventory) {
         context.run((world, pos) -> {
-            if (EnhancedWorkbenches.QUICKBENCH) {
+            if(EnhancedWorkbenches.QUICKBENCH) {
                 MixinHooks.slotChangedCraftingGrid(world, input, result);
             } else {
                 updateResult(this, world, player, input, result);

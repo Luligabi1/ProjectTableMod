@@ -26,9 +26,9 @@ public class ProjectTableBlock extends CraftingBlock {
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (!state.isOf(newState.getBlock())) {
+        if(!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof ProjectTableBlockEntity) {
+            if(blockEntity instanceof ProjectTableBlockEntity) {
                 ItemScatterer.spawn(world, pos, ((ProjectTableBlockEntity) blockEntity).getInput());
                 ItemScatterer.spawn(world, pos, ((ProjectTableBlockEntity) blockEntity).getInventory());
                 world.updateComparators(pos, this);

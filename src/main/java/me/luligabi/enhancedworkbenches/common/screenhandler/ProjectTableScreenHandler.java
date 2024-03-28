@@ -59,7 +59,7 @@ public class ProjectTableScreenHandler extends CraftingBlockScreenHandler {
 
     @Override
     public ItemStack quickMove(PlayerEntity player, int index) {
-        if (EnhancedWorkbenches.QUICKBENCH && index == 0) {
+        if(EnhancedWorkbenches.QUICKBENCH && index == 0) {
             return MixinHooks.handleShiftCraft(player, this, slots.get(index), input, result, 10, 64);
         }
 
@@ -83,7 +83,7 @@ public class ProjectTableScreenHandler extends CraftingBlockScreenHandler {
                 }
             } else if(index >= 10 && index < 28) {
                 if(!insertItem(itemStack2, 1, 10, false)) {
-                    if (!insertItem(itemStack2, 28, 64, false)) {
+                    if(!insertItem(itemStack2, 28, 64, false)) {
                         return ItemStack.EMPTY;
                     }
                 }

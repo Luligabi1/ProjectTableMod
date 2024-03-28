@@ -24,53 +24,53 @@ public class DelegateCraftingInventory extends CraftingInventory {
 
     @Override
     public boolean isEmpty() {
-        for (int i = 0; i < size(); i++) {
-            if (!getStack(i).isEmpty()) return false;
+        for(int i = 0; i < size(); i++) {
+            if(!getStack(i).isEmpty()) return false;
         }
         return true;
     }
 
     @Override
     public ItemStack getStack(int slot) {
-        return slot >= size() ? ItemStack.EMPTY : this.input.getStack(slot);
+        return slot >= size() ? ItemStack.EMPTY : input.getStack(slot);
     }
 
     @Override
     public ItemStack removeStack(int slot) {
-        if (slot >= 9) throw new IndexOutOfBoundsException();
-        return this.input.removeStack(slot);
+        if(slot >= 9) throw new IndexOutOfBoundsException();
+        return input.removeStack(slot);
     }
 
     @Override
     public ItemStack removeStack(int slot, int amount) {
-        if (slot >= 9) throw new IndexOutOfBoundsException();
-        ItemStack itemStack = this.input.removeStack(slot, amount);
-        if (!itemStack.isEmpty()) {
-            this.handler.onContentChanged(this);
+        if(slot >= 9) throw new IndexOutOfBoundsException();
+        ItemStack itemStack = input.removeStack(slot, amount);
+        if(!itemStack.isEmpty()) {
+            handler.onContentChanged(this);
         }
         return itemStack;
     }
 
     @Override
     public void setStack(int slot, ItemStack stack) {
-        if (slot >= 9) throw new IndexOutOfBoundsException();
-        this.input.setStack(slot, stack);
-        this.handler.onContentChanged(this);
+        if(slot >= 9) throw new IndexOutOfBoundsException();
+        input.setStack(slot, stack);
+        handler.onContentChanged(this);
     }
 
     @Override
     public void markDirty() {
-        this.input.markDirty();
+        input.markDirty();
     }
 
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
-        return this.input.canPlayerUse(player);
+        return input.canPlayerUse(player);
     }
 
     @Override
     public void clear() {
-        for (int i = 0; i < size(); i++) {
+        for(int i = 0; i < size(); i++) {
             removeStack(i);
         }
     }

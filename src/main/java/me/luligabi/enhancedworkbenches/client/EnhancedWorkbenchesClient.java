@@ -34,7 +34,7 @@ public class EnhancedWorkbenchesClient implements ClientModInitializer {
         ClientConfig.HANDLER.load();
         CLIENT_CONFIG = ClientConfig.HANDLER.instance();
 
-        if (FabricLoader.getInstance().isModLoaded("craftingtweaks")) {
+        if(FabricLoader.getInstance().isModLoaded("craftingtweaks")) {
             try {
                 Class.forName("me.luligabi.enhancedworkbenches.client.compat.craftingtweaks.ProjectTableCraftingGridProvider").getConstructor().newInstance();
                 Class.forName("me.luligabi.enhancedworkbenches.client.compat.craftingtweaks.CraftingStationCraftingGridProvider").getConstructor().newInstance();

@@ -30,9 +30,9 @@ public class CraftingStationBlock extends CraftingBlock {
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (!state.isOf(newState.getBlock())) {
+        if(!state.isOf(newState.getBlock())) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof CraftingStationBlockEntity) {
+            if(blockEntity instanceof CraftingStationBlockEntity) {
                 ItemScatterer.spawn(world, pos, ((CraftingStationBlockEntity) blockEntity).getInput());
                 world.updateComparators(pos, this);
             }
