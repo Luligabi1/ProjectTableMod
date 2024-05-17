@@ -24,7 +24,7 @@ public class DelegateCraftingInventory extends CraftingInventory {
 
     @Override
     public boolean isEmpty() {
-        for(int i = 0; i < size(); i++) {
+        for(int i = 0; i < 9; i++) {
             if(!getStack(i).isEmpty()) return false;
         }
         return true;
@@ -32,7 +32,7 @@ public class DelegateCraftingInventory extends CraftingInventory {
 
     @Override
     public ItemStack getStack(int slot) {
-        return slot >= size() ? ItemStack.EMPTY : input.getStack(slot);
+        return slot >= 9 ? ItemStack.EMPTY : input.getStack(slot);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class DelegateCraftingInventory extends CraftingInventory {
 
     @Override
     public void clear() {
-        for(int i = 0; i < size(); i++) {
+        for(int i = 0; i < 9; i++) {
             removeStack(i);
         }
     }
