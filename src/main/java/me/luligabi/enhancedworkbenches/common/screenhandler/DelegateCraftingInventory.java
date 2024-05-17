@@ -4,7 +4,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeMatcher;
 import net.minecraft.screen.ScreenHandler;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DelegateCraftingInventory extends CraftingInventory {
 
@@ -72,6 +76,22 @@ public class DelegateCraftingInventory extends CraftingInventory {
     public void clear() {
         for(int i = 0; i < 9; i++) {
             removeStack(i);
+        }
+    }
+
+    @Override
+    public List<ItemStack> getInputStacks() {
+        List<ItemStack> stacks = new ArrayList<>(9);
+        for(int i = 0; i < 9; i++) {
+            stacks.add(getStack(i));
+        }
+        return stacks;
+    }
+
+    @Override
+    public void provideRecipeInputs(RecipeMatcher finder) {
+        for(int i = 0; i < 9; i++) {
+            finder.addUnenchantedInput(getStack(i));
         }
     }
 }
