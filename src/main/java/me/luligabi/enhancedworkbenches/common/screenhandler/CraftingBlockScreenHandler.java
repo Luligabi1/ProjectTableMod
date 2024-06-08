@@ -74,10 +74,6 @@ public abstract class CraftingBlockScreenHandler extends ScreenHandler {
         return canUse(context, player, getBlock());
     }
 
-    public void provideRecipeInputs(RecipeMatcher matcher) {
-        input.provideRecipeInputs(matcher);
-    }
-
 
     protected abstract Block getBlock();
 
