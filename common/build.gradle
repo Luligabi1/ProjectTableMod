@@ -1,0 +1,14 @@
+architectury {
+    common rootProject.enabled_platforms.split(',')
+}
+
+dependencies {
+    modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+    modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
+
+    modImplementation("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric") { transitive false }
+
+    modImplementation("net.blay09.mods:balm-common:${project.balm_version}")
+    modImplementation("net.blay09.mods:craftingtweaks-common:${project.crafting_tweaks_version}")
+    modRuntimeOnly("net.blay09.mods:kuma-api-common:${project.kuma_api_version}")
+}
