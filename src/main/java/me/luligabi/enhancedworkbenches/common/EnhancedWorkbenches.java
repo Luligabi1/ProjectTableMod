@@ -31,6 +31,15 @@ public class EnhancedWorkbenches implements ModInitializer {
                         entries.addAll(EnhancedWorkbenches.ITEMS)
                 )
         .build());
+
+        if(FabricLoader.getInstance().isModLoaded("craftingtweaks")) {
+            try {
+                Class.forName("me.luligabi.enhancedworkbenches.common.compat.craftingtweaks.ProjectTableCraftingGridProvider").getConstructor().newInstance();
+                Class.forName("me.luligabi.enhancedworkbenches.common.compat.craftingtweaks.CraftingStationCraftingGridProvider").getConstructor().newInstance();
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static Identifier id(String id) {

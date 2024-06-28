@@ -1,4 +1,4 @@
-package me.luligabi.enhancedworkbenches.client.compat.craftingtweaks;
+package me.luligabi.enhancedworkbenches.common.compat.craftingtweaks;
 
 import me.luligabi.enhancedworkbenches.common.EnhancedWorkbenches;
 import me.luligabi.enhancedworkbenches.common.screenhandler.ProjectTableScreenHandler;
