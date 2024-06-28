@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "enhanced_workbenches",
+  "version": "${version}",
+  "name": "Enhanced Workbenches",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/enhanced_workbenches/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.luligabi.enhancedworkbenches.fabric.common.EnhancedWorkbenchesFabric"
+    ],
+    "client": [
+      "me.luligabi.enhancedworkbenches.fabric.client.EnhancedWorkbenchesClientFabric"
+    ],
+    "modmenu": [
+      "me.luligabi.enhancedworkbenches.fabric.client.compat.modmenu.ConfigScreenEntrypoint"
+    ]
+  },
+  "mixins": [
+    "enhanced_workbenches.mixins.json"
+  ],
+  "depends": {
+    "minecraft": ">=1.21",
+    "fabric-api": "*",
+    "architectury": ">=13.0.1"
+  }
+}

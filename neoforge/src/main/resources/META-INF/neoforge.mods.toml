@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "enhanced_workbenches"
+version = "${version}"
+displayName = "Enhanced Workbenches"
+authors = "Me!"
+description = '''
+This is an example description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.enhanced_workbenches]]
+modId = "architectury"
+type = "required"
+versionRange = "[13,)"
+ordering = "AFTER"
+side = "BOTH"
+[[dependencies.enhanced_workbenches]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.0,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.enhanced_workbenches]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21,)"
+ordering = "NONE"
+side = "BOTH"
+[[mixins]]
+config = "enhanced_workbenches.mixins.json"

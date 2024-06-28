@@ -1,0 +1,25 @@
+{
+  "block.enhancedworkbenches.project_table": "Проєктувальний стіл",
+  "block.enhancedworkbenches.crafting_station": "Ремісничий стіл",
+
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering": "Візуалізація",
+
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.rendering": "Візуалізація",
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.project_table": "Проєктувальний стіл",
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.crafting_station": "Ремісничий стіл",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInput": "Візуалізувати інгредієнти?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInput.desc": "Чи зможете ви бачити інгредієнти зверху проєктувального чи ремісничого стола.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputDistance": "Дистанція візуалізації інгредієнтів",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputDistance.desc": "Як далеко, в чанках (16 блоків), ви зможете бачити інгредієнти.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputRequireFancy": "Візуалізація інгредієнтів вимагає «Красиву»",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputRequireFancy.desc": "Чи повинні інгредієнти візуалізуватися лише якщо ви використовуєте графічні налаштування «красива» або вище.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnProjectTable": "Візуалізувати інгредієнти на проєктувальних столах?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnProjectTable.desc": "Чи повинні інгредієнти візуалізуватися на проєктувальних столах",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnCraftingStation": "Візуалізувати інгредієнти на ремісничих столах?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnCraftingStation.desc": "Чи повинні інгредієнти візуалізуватися на ремісничих столах"
+}

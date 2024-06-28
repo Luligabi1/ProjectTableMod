@@ -1,0 +1,25 @@
+{
+  "block.enhancedworkbenches.project_table": "Bancada de Projeto",
+  "block.enhancedworkbenches.crafting_station": "Estação de Trabalho",
+
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering": "Renderização",
+
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.rendering": "Renderização",
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.project_table": "Bancada de Projeto",
+  "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.crafting_station": "Estação de Trabalho",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInput": "Renderizar Input?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInput.desc": "Determina se é possível ver o conteúdo do input em cima dde ambas Bancadas de Projeto e Estações de Trabalho.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputDistance": "Distância de Renderização de Input",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputDistance.desc": "Quão longe, em chunks (16 blocos), você é capaz de ver o conteúdo do input.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputRequireFancy": "Renderização de Input requer 'Bonitos'",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputRequireFancy.desc": "Determina se o input deve ser renderizado somente se você está usando gráficos 'Bonitos' ou acima.",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnProjectTable": "Renderizar Input em Bancadas de Projeto?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnProjectTable.desc": "Determina se o Input deve ser renderizado em Bancadas de Projeto",
+
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnCraftingStation": "Renderizar Input em Estações de Trabalho?",
+  "yacl3.config.enhancedworkbenches:client_config.renderInputOnCraftingStation.desc": "Determina se o Input deve ser renderizado em Estações de Trabalho"
+}
