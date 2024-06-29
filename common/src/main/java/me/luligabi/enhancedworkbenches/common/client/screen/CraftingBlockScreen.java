@@ -17,8 +17,10 @@ public abstract class CraftingBlockScreen<T extends AbstractContainerMenu> exten
 
     @Override
     protected void init() {
-        super.init();
         titleLabelX = (imageWidth - font.width(title)) / 2;
+    }
+
+    protected final void setCoordinates() {
         leftPos = width / 2 - imageWidth / 2;
         topPos = height / 2 - imageHeight / 2;
     }
@@ -31,9 +33,6 @@ public abstract class CraftingBlockScreen<T extends AbstractContainerMenu> exten
 
     @Override
     protected void renderBg(GuiGraphics gui, float f, int i, int j) {
-        //renderBackground(ctx);
-        RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         gui.blit(getBackgroundTexture(), leftPos, topPos, 0, 0, imageWidth, imageHeight);
     }
 

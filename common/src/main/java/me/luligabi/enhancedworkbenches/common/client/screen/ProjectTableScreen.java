@@ -18,6 +18,7 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> {
         super.init();
         imageHeight = 208;
         inventoryLabelY = 114;
+        setCoordinates();
     }
 
     @Override

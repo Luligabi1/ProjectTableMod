@@ -13,6 +13,12 @@ public class CraftingStationScreen extends CraftingBlockScreen<CraftingStationMe
     }
 
     @Override
+    protected void init() {
+        super.init();
+        setCoordinates();
+    }
+
+    @Override
     protected ResourceLocation getBackgroundTexture() {
         return ResourceLocation.withDefaultNamespace("textures/gui/container/crafting_table.png");
     }
