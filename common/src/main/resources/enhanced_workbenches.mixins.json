@@ -1,11 +1,12 @@
 {
   "required": true,
-  "package": "me.luligabi.enhancedworkbenches.mixin",
+  "package": "me.luligabi.enhancedworkbenches.common.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
   "client": [
   ],
   "mixins": [
+    "ServerPlaceRecipeMixin"
   ],
   "injectors": {
     "defaultRequire": 1
