@@ -1,5 +1,5 @@
 plugins {
-    id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
+    id 'dev.architectury.loom' version '1.7-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
 }
@@ -13,7 +13,18 @@ allprojects {
     version = rootProject.mod_version
 
     repositories {
-        maven { url "https://maven.isxander.dev/releases" }
+        maven {
+            name = "isXander (YACL)"
+            url = "https://maven.isxander.dev/releases"
+        }
+        maven {
+            name = "Shedaniel (REI)"
+            url = "https://maven.shedaniel.me"
+        }
+        maven {
+            name = "TerraformersMC (EMI)"
+            url = "https://maven.terraformersmc.com/"
+        }
     }
 }
 

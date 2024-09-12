@@ -7,6 +7,7 @@
     "ServerPlaceRecipeMixin"
   ],
   "client": [
+    "AbstractContainerScreenAccessor",
     "RecipeBookComponentInvoker"
   ],
   "injectors": {

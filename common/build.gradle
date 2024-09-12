@@ -11,4 +11,11 @@ dependencies {
     modImplementation("net.blay09.mods:balm-common:${project.balm_version}")
     modImplementation("net.blay09.mods:craftingtweaks-common:${project.crafting_tweaks_version}")
     modRuntimeOnly("net.blay09.mods:kuma-api-common:${project.kuma_api_version}")
+
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:${rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-default-plugin:${rei_version}"
+
+
+    modCompileOnly "dev.emi:emi-xplat-intermediary:${emi_version}"
 }

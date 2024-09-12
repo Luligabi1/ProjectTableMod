@@ -41,6 +41,19 @@ dependencies {
     //include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-neoforge")
     forgeRuntimeLibrary("org.quiltmc.parsers:json:0.2.1")
     forgeRuntimeLibrary("org.quiltmc.parsers:gson:0.2.1")
+
+
+    switch("${active_item_viewer}") {
+        case "rei":
+            modImplementation "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"
+            break
+        case "emi":
+            modCompileOnly "dev.emi:emi-neoforge:${emi_version}:api"
+            modLocalRuntime "dev.emi:emi-neoforge:${emi_version}"
+            break
+        default:
+            break
+    }
 }
 
 processResources {

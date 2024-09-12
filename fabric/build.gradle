@@ -46,6 +46,19 @@ dependencies {
     modImplementation("net.blay09.mods:balm-fabric:${project.balm_version}")
     modImplementation("net.blay09.mods:craftingtweaks-fabric:${project.crafting_tweaks_version}")
     modRuntimeOnly("net.blay09.mods:kuma-api-fabric:${project.kuma_api_version}")
+
+
+    switch("${active_item_viewer}") {
+        case "rei":
+            modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rei_version}"
+            break
+        case "emi":
+            modCompileOnly "dev.emi:emi-fabric:${emi_version}:api"
+            modLocalRuntime "dev.emi:emi-fabric:${emi_version}"
+            break
+        default:
+            break
+    }
 }
 
 processResources {
