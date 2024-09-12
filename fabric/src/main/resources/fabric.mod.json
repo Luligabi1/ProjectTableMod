@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "enhanced_workbenches",
+  "id": "enhancedworkbenches",
   "version": "${version}",
   "name": "Enhanced Workbenches",
   "description": "This is an example description! Tell everyone what your mod is about!",
@@ -32,7 +32,7 @@
     ]
   },
   "mixins": [
-    "enhanced_workbenches.mixins.json"
+    "enhancedworkbenches.mixins.json"
   ],
   "depends": {
     "minecraft": ">=1.21",
