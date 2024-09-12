@@ -3,10 +3,11 @@
   "package": "me.luligabi.enhancedworkbenches.common.mixin",
   "compatibilityLevel": "JAVA_21",
   "minVersion": "0.8",
-  "client": [
-  ],
   "mixins": [
     "ServerPlaceRecipeMixin"
+  ],
+  "client": [
+    "RecipeBookComponentInvoker"
   ],
   "injectors": {
     "defaultRequire": 1

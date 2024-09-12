@@ -5,7 +5,6 @@ import me.luligabi.enhancedworkbenches.common.common.block.projecttable.ProjectT
 import me.luligabi.enhancedworkbenches.common.common.menu.ProjectTableMenu;
 import me.luligabi.enhancedworkbenches.common.common.util.ProjectTableRecipeHistory;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
@@ -16,20 +15,21 @@ import net.minecraft.network.protocol.game.ServerboundPlaceRecipePacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.inventory.RecipeBookMenu;
+import net.minecraft.world.inventory.ClickType;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> /*implements RecipeUpdateListener*/ {
+public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> implements RecipeUpdateListener {
 
     @NotNull
     private final ProjectTableBlockEntity blockEntity;
     private int recipeHistoryX;
     private int recipeHistoryY;
-    //private final RecipeBookComponent recipeBookComponent = new RecipeBookComponent();
+    private final ProjectTableRecipeBookComponent recipeBookComponent = new ProjectTableRecipeBookComponent();
 
     public ProjectTableScreen(ProjectTableMenu abstractContainerMenu, Inventory inventory, Component title) {
         super(abstractContainerMenu, inventory, title);
@@ -49,9 +49,9 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> /*
         setCoordinates();
         recipeHistoryX = leftPos - 60;
         recipeHistoryY = topPos + 14;
-        //recipeBookComponent.init(width, height, minecraft, true, menu);
-        //addWidget(recipeBookComponent);
-        //recipeBookComponent.toggleVisibility();
+        recipeBookComponent.init(width, height, minecraft, true, menu);
+        addWidget(recipeBookComponent);
+        recipeBookComponent.toggleVisibility();
     }
 
     @Override
@@ -63,7 +63,8 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> /*
     @Override
     public void render(GuiGraphics gui, int mouseX, int mouseY, float delta) {
         super.render(gui, mouseX, mouseY, delta);
-        //recipeBookComponent.renderGhostRecipe(gui, leftPos, topPos, true, delta);
+        recipeBookComponent.renderGhostRecipe(gui, leftPos, topPos, true, delta);
+        this.recipeBookComponent.renderTooltip(gui, leftPos, topPos, mouseX, mouseY);
     }
 
     @Override
@@ -115,6 +116,11 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> /*
         return super.mouseClicked(mouseX, mouseY, j);
     }
 
+    @Override
+    protected void slotClicked(Slot slot, int i, int j, ClickType clickType) {
+        super.slotClicked(slot, i, j, clickType);
+        recipeBookComponent.slotClicked(slot);
+    }
 
     private void renderRecipeHistory(GuiGraphics gui, int mouseX, int mouseY) {
         ArrayList<ProjectTableRecipeHistory.RecipeHistoryEntry> list = blockEntity.recipeHistory.list;
@@ -140,14 +146,14 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> /*
         }
     }
 
-    /*@Override
+    @Override
     public RecipeBookComponent getRecipeBookComponent() {
         return recipeBookComponent;
-    }*/
+    }
 
-    /*@Override
+    @Override
     public void recipesUpdated() {
-    }*/
+    }
 
     private static final ResourceLocation RECIPE_HISTORY_BG = EnhancedWorkbenches.id("textures/gui/project_table/recipe_history.png");
     private static final ResourceLocation RECIPE_SPRITE = ResourceLocation.withDefaultNamespace("container/stonecutter/recipe");
