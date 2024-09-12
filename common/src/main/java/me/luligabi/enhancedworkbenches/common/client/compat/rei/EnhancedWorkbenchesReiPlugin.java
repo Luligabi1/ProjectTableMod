@@ -1,10 +1,14 @@
 package me.luligabi.enhancedworkbenches.common.client.compat.rei;
 
+import me.luligabi.enhancedworkbenches.common.client.screen.ProjectTableScreen;
 import me.luligabi.enhancedworkbenches.common.common.block.BlockRegistry;
 import me.luligabi.enhancedworkbenches.common.common.menu.CraftingStationMenu;
 import me.luligabi.enhancedworkbenches.common.common.menu.ProjectTableMenu;
+import me.luligabi.enhancedworkbenches.common.mixin.AbstractContainerScreenAccessor;
+import me.shedaniel.math.Rectangle;
 import me.shedaniel.rei.api.client.plugins.REIClientPlugin;
 import me.shedaniel.rei.api.client.registry.category.CategoryRegistry;
+import me.shedaniel.rei.api.client.registry.screen.ExclusionZones;
 import me.shedaniel.rei.api.client.registry.transfer.TransferHandlerRegistry;
 import me.shedaniel.rei.api.client.registry.transfer.simple.SimpleTransferHandler;
 import me.shedaniel.rei.api.common.transfer.info.stack.SlotAccessor;
@@ -12,6 +16,7 @@ import me.shedaniel.rei.api.common.util.EntryStacks;
 import me.shedaniel.rei.forge.REIPluginClient;
 import me.shedaniel.rei.plugin.common.BuiltinPlugin;
 
+import java.util.List;
 import java.util.stream.IntStream;
 
 @SuppressWarnings("UnstableApiUsage")
@@ -60,4 +65,15 @@ public class EnhancedWorkbenchesReiPlugin implements REIClientPlugin {
         });
     }
 
+    @Override
+    public void registerExclusionZones(ExclusionZones zones) {
+        zones.register(ProjectTableScreen.class, screen -> {
+            return List.of(new Rectangle(
+                ((AbstractContainerScreenAccessor) screen).getX() - 68,
+                ((AbstractContainerScreenAccessor) screen).getY(),
+                64,
+                77
+            ));
+        });
+    }
 }
