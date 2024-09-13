@@ -1,4 +1,4 @@
-package me.luligabi.enhancedworkbenches.common.client.compat.emi;
+package me.luligabi.enhancedworkbenches.common.client.compat.recipeviewer.emi;
 
 import com.google.common.collect.Lists;
 import dev.emi.emi.api.recipe.EmiRecipe;

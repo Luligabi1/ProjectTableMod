@@ -1,4 +1,4 @@
-package me.luligabi.enhancedworkbenches.common.client.compat.rei;
+package me.luligabi.enhancedworkbenches.common.client.compat.recipeviewer.rei;
 
 import me.luligabi.enhancedworkbenches.common.client.screen.ProjectTableScreen;
 import me.luligabi.enhancedworkbenches.common.common.block.BlockRegistry;
