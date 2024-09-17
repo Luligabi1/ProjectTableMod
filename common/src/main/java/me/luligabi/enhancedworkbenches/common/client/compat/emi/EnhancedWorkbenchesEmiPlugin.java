@@ -32,6 +32,6 @@ public class EnhancedWorkbenchesEmiPlugin implements EmiPlugin {
         });
     }
 
-    private static final CraftingStationRecipeHandler CRAFTING_STATION_HANDLER = new CraftingStationRecipeHandler();
-    private static final ProjectTableRecipeHandler PROJECT_TABLE_HANDLER = new ProjectTableRecipeHandler();
+    public static final CraftingStationRecipeHandler CRAFTING_STATION_HANDLER = new CraftingStationRecipeHandler();
+    public static final ProjectTableRecipeHandler PROJECT_TABLE_HANDLER = new ProjectTableRecipeHandler();
 }

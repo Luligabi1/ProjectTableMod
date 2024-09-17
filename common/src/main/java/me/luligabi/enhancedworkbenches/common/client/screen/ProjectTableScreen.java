@@ -57,7 +57,6 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> im
     @Override
     protected void containerTick() {
         super.containerTick();
-        //recipeBookComponent.tick();
     }
 
     @Override
