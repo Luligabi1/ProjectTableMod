@@ -25,10 +25,10 @@
       "me.luligabi.enhancedworkbenches.fabric.client.compat.modmenu.ConfigScreenEntrypoint"
     ],
     "emi": [
-      "me.luligabi.enhancedworkbenches.common.client.compat.emi.EnhancedWorkbenchesEmiPlugin"
+      "me.luligabi.enhancedworkbenches.common.client.compat.recipeviewer.emi.EnhancedWorkbenchesEmiPlugin"
     ],
     "rei_client": [
-      "me.luligabi.enhancedworkbenches.common.client.compat.rei.EnhancedWorkbenchesReiPlugin"
+      "me.luligabi.enhancedworkbenches.common.client.compat.recipeviewer.rei.EnhancedWorkbenchesReiPlugin"
     ]
   },
   "mixins": [
