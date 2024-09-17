@@ -1,5 +1,6 @@
 package me.luligabi.enhancedworkbenches.common.client.screen;
 
+import me.luligabi.enhancedworkbenches.common.client.EnhancedWorkbenchesClient;
 import me.luligabi.enhancedworkbenches.common.common.EnhancedWorkbenches;
 import me.luligabi.enhancedworkbenches.common.common.block.projecttable.ProjectTableBlockEntity;
 import me.luligabi.enhancedworkbenches.common.common.menu.ProjectTableMenu;
@@ -11,13 +12,13 @@ import net.minecraft.client.gui.screens.recipebook.RecipeBookComponent;
 import net.minecraft.client.gui.screens.recipebook.RecipeUpdateListener;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.protocol.game.ServerboundPlaceRecipePacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -57,7 +58,6 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> im
     @Override
     protected void containerTick() {
         super.containerTick();
-        //recipeBookComponent.tick();
     }
 
     @Override
@@ -106,8 +106,8 @@ public class ProjectTableScreen extends CraftingBlockScreen<ProjectTableMenu> im
             int index = Screen.hasControlDown() ? i + 10 : i;
             if(widthRange >= 0.0 && heightRange >= 0.0 && widthRange < 16.0 && heightRange < 18.0 && menu.clickMenuButton(minecraft.player, index)) {
                 if(index >= 0 && index <= 8) {
-                    minecraft.gameMode.handleInventoryButtonClick(menu.containerId, index);
-                    minecraft.player.connection.send(new ServerboundPlaceRecipePacket(menu.containerId, blockEntity.recipeHistory.list.get(i).toRecipeHolder(minecraft.player.level()), Screen.hasShiftDown()));
+                    RecipeHolder<?> recipe = blockEntity.recipeHistory.get(index).toRecipeHolder(minecraft.level);
+                    if(!EnhancedWorkbenchesClient.projectTableRecipeFiller.fillRecipe(recipe, this)) return false;
                     minecraft.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.UI_STONECUTTER_SELECT_RECIPE, 1.0F));
                 }
                 return true;

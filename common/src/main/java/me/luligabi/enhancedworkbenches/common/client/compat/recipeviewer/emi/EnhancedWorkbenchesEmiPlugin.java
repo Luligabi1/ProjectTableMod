@@ -1,4 +1,4 @@
-package me.luligabi.enhancedworkbenches.common.client.compat.emi;
+package me.luligabi.enhancedworkbenches.common.client.compat.recipeviewer.emi;
 
 import dev.emi.emi.api.EmiEntrypoint;
 import dev.emi.emi.api.EmiPlugin;
@@ -32,6 +32,6 @@ public class EnhancedWorkbenchesEmiPlugin implements EmiPlugin {
         });
     }
 
-    private static final CraftingStationRecipeHandler CRAFTING_STATION_HANDLER = new CraftingStationRecipeHandler();
-    private static final ProjectTableRecipeHandler PROJECT_TABLE_HANDLER = new ProjectTableRecipeHandler();
+    public static final CraftingStationRecipeHandler CRAFTING_STATION_HANDLER = new CraftingStationRecipeHandler();
+    public static final ProjectTableRecipeHandler PROJECT_TABLE_HANDLER = new ProjectTableRecipeHandler();
 }
