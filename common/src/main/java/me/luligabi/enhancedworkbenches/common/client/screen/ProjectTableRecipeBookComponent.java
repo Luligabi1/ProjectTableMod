@@ -51,4 +51,8 @@ public class ProjectTableRecipeBookComponent extends RecipeBookComponent {
     public boolean isVisible() {
         return true;
     }
+
+    public void clearGhostRecipe() {
+        ghostRecipe.clear();
+    }
 }
