@@ -27,7 +27,7 @@ public class EnhancedWorkbenchesEmiPlugin implements EmiPlugin {
                 ((AbstractContainerScreenAccessor) screen).getX() - 68,
                 ((AbstractContainerScreenAccessor) screen).getY(),
                 64,
-                77
+                79
             ));
         });
     }
