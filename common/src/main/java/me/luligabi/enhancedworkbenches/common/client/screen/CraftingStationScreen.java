@@ -7,13 +7,9 @@ import net.minecraft.world.entity.player.Inventory;
 
 public class CraftingStationScreen extends CraftingBlockScreen<CraftingStationMenu> {
 
-    public CraftingStationScreen(CraftingStationMenu abstractContainerMenu, Inventory inventory, Component title) {
-        super(abstractContainerMenu, inventory, title);
-    }
 
-    @Override
-    protected ResourceLocation getBackgroundTexture() {
-        return ResourceLocation.withDefaultNamespace("textures/gui/container/crafting_table.png");
+    public CraftingStationScreen(CraftingStationMenu abstractContainerMenu, Inventory inventory, Component component) {
+        super(abstractContainerMenu, inventory, component);
     }
 
     @Override
@@ -22,4 +18,8 @@ public class CraftingStationScreen extends CraftingBlockScreen<CraftingStationMe
         setCoordinates();
     }
 
+    @Override
+    protected ResourceLocation getBackgroundTexture() {
+        return ResourceLocation.withDefaultNamespace("textures/gui/container/crafting_table.png");
+    }
 }

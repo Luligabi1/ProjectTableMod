@@ -1,4 +1,4 @@
-package me.luligabi.enhancedworkbenches.common.common.util;
+package me.luligabi.enhancedworkbenches.common.common.menu;
 
 
 import net.minecraft.world.Container;
@@ -27,10 +27,6 @@ public class DelegateCraftingInventory extends TransientCraftingContainer implem
 
     public CraftingInput toCraftingInput() {
         return CraftingInput.of(3, 3, getItems());
-    }
-
-    public CraftingInput toPositionedCraftingInput() {
-        return CraftingInput.ofPositioned(3, 3, getItems()).input();
     }
 
     @Override
