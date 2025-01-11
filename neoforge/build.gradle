@@ -43,6 +43,10 @@ dependencies {
     forgeRuntimeLibrary("org.quiltmc.parsers:gson:0.2.1")
 
 
+    modImplementation("net.blay09.mods:balm-neoforge:${project.balm_version}")
+    modImplementation("net.blay09.mods:craftingtweaks-neoforge:${project.crafting_tweaks_version}")
+    modRuntimeOnly("net.blay09.mods:kuma-api-neoforge:${project.kuma_api_version}")
+
     switch("${active_item_viewer}") {
         case "rei":
             modImplementation "me.shedaniel:RoughlyEnoughItems-neoforge:${rei_version}"

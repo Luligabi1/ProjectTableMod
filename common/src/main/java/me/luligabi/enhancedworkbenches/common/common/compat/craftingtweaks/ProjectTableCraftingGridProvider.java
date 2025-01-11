@@ -11,9 +11,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 
 public class ProjectTableCraftingGridProvider implements CraftingGridProvider {
 
-    public ProjectTableCraftingGridProvider() {
-        CraftingTweaksAPI.registerCraftingGridProvider(this);
-    }
 
     @Override
     public String getModId() {

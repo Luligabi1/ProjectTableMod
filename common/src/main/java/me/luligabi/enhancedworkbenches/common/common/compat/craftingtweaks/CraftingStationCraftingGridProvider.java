@@ -10,10 +10,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 
 public class CraftingStationCraftingGridProvider implements CraftingGridProvider {
 
-    public CraftingStationCraftingGridProvider() {
-        CraftingTweaksAPI.registerCraftingGridProvider(this);
-        System.out.println("lol");
-    }
 
     @Override
     public String getModId() {
