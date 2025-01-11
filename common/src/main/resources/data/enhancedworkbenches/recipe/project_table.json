@@ -2,25 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "PCP",
-    "PSP"
+    "PTP",
+    "PCP"
   ],
   "key": {
     "#": {
-      "tag": "c:stone"
+      "tag": "c:stones"
     },
     "P": {
       "tag": "minecraft:planks"
     },
-    "C": {
-      "tag": "c:workbench"
+    "T": {
+      "tag": "c:player_workstations/crafting_tables"
     },
-    "S": {
+    "C": {
       "tag": "c:chests"
     }
   },
   "result": {
-    "item": "enhancedworkbenches:project_table",
+    "id": "enhancedworkbenches:project_table",
     "count": 1
   }
 }

@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "minecraft:crafting_table",
-    "enhancedworkbenches:project_table",
-    "enhancedworkbenches:crafting_station"
-  ]
-}

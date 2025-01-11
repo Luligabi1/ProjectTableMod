@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "c:workbench"
+      "tag": "c:player_workstations/crafting_tables"
     }
   ],
   "result": {
-    "item": "enhancedworkbenches:crafting_station",
+    "id": "enhancedworkbenches:crafting_station",
     "count": 1
   }
 }
