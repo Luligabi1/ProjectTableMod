@@ -8,5 +8,7 @@ public final class EnhancedWorkbenchesFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         EnhancedWorkbenches.init();
+        ItemStorageInit.init();
     }
+
 }

@@ -48,7 +48,7 @@ public class BlockRegistry {
                 () -> new BlockItem(block.get(), new Item.Properties().arch$tab(EnhancedWorkbenches.ITEM_GROUP))
             );
         }
-        // FIXME ItemStorage.SIDED.registerForBlockEntity((blockEntity, direction) -> blockEntity.inventoryWrapper, PROJECT_TABLE_ENTITY_TYPE);
+
     }
 
     private BlockRegistry() {

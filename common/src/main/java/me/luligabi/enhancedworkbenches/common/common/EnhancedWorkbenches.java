@@ -26,11 +26,10 @@ public class EnhancedWorkbenches {
         BlockRegistry.init();
         MenuTypeRegistry.init();
 
-        // FIXME
+
         if(Platform.isModLoaded("craftingtweaks")) {
             try {
-                Class.forName("me.luligabi.enhancedworkbenches.common.common.compat.craftingtweaks.ProjectTableCraftingGridProvider").getConstructor().newInstance();
-                Class.forName("me.luligabi.enhancedworkbenches.common.common.compat.craftingtweaks.CraftingStationCraftingGridProvider").getConstructor().newInstance();
+                Class.forName("me.luligabi.enhancedworkbenches.common.common.compat.craftingtweaks.CraftingTweaksCompat").getConstructor().newInstance();
             } catch(Throwable e) {
                 e.printStackTrace();
             }

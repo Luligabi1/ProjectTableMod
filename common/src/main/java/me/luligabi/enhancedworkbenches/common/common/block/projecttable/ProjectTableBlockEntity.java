@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class ProjectTableBlockEntity extends CraftingBlockEntity {
 
-    private final SimpleContainer container = new SimpleContainer(2*9) {
+    public final SimpleContainer container = new SimpleContainer(2*9) {
         @Override
         public void setChanged() {
             super.setChanged();
@@ -25,7 +25,6 @@ public class ProjectTableBlockEntity extends CraftingBlockEntity {
         }
     };
 
-    // FIXME public final InventoryStorage inventoryWrapper = InventoryStorage.of(container, null);
 
     public ProjectTableBlockEntity(BlockPos pos, BlockState state) {
         super(BlockRegistry.PROJECT_TABLE_BLOCK_ENTITY.get(), pos, state);
