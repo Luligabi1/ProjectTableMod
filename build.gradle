@@ -2,6 +2,7 @@ plugins {
     id 'dev.architectury.loom' version '1.7-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id "me.modmuss50.mod-publish-plugin" version "0.8.3"
 }
 
 architectury {
@@ -62,5 +63,103 @@ subprojects {
 
     tasks.withType(JavaCompile).configureEach {
         it.options.release = 21
+    }
+}
+
+ext.getChangeLog = { ->
+    return ""
+}
+
+publishMods {
+    changelog = project.getChangeLog()
+    type = STABLE
+
+    def optionsCurseforge = curseforgeOptions {
+        accessToken = providers.environmentVariable("CURSEFORGE_API_KEY")
+        projectId = "857513"
+        projectSlug = "enhanced-workbenches"
+        minecraftVersions.add("${rootProject.minecraft_version}")
+    }
+
+    def optionsModrinth = modrinthOptions {
+        accessToken = providers.environmentVariable("MODRINTH_TOKEN")
+        projectId = "ZmRxbKUp"
+        minecraftVersions.add("${rootProject.minecraft_version}")
+    }
+
+
+    curseforge("curseforgeForge") {
+        from optionsCurseforge
+        modLoaders.add("neoforge")
+        file = project(":neoforge").tasks.named("remapJar").get().archiveFile
+        displayName = "${rootProject.mod_version} (NeoForge)"
+        version = "${rootProject.mod_version}-neoforge"
+
+        requires("architectury-api")
+        optional("crafting-tweaks")
+        optional("roughly-enough-items")
+        optional("emi")
+        embeds("yacl")
+
+        announcementTitle = "Download from CurseForge (NeoForge)"
+    }
+
+    curseforge("curseforgeFabric") {
+        from optionsCurseforge
+        modLoaders.add("fabric")
+        file = project(":fabric").tasks.named("remapJar").get().archiveFile
+        displayName = "${rootProject.mod_version} (Fabric)"
+        version = "${rootProject.mod_version}-fabric"
+
+        requires("fabric-api")
+        requires("architectury-api")
+        optional("crafting-tweaks")
+        optional("roughly-enough-items")
+        optional("emi")
+        embeds("yacl")
+
+        announcementTitle = "Download from CurseForge (Fabric)"
+    }
+
+    modrinth("modrinthForge") {
+        from optionsModrinth
+        modLoaders.add("neoforge")
+        file = project(":neoforge").tasks.named("remapJar").get().archiveFile
+        displayName = "${rootProject.mod_version} (NeoForge)"
+        version = "${rootProject.mod_version}-neoforge"
+
+        requires("architectury-api")
+        optional("crafting-tweaks")
+        optional("rei")
+        optional("emi")
+        embeds("yacl")
+
+        announcementTitle = "Download from Modrinth (NeoForge)"
+    }
+
+    modrinth("modrinthFabric") {
+        from optionsModrinth
+        modLoaders.add("fabric")
+        file = project(":fabric").tasks.named("remapJar").get().archiveFile
+        displayName = "${rootProject.mod_version} (Fabric)"
+        version = "${rootProject.mod_version}-fabric"
+
+        requires("fabric-api")
+        requires("architectury-api")
+        optional("crafting-tweaks")
+        optional("rei")
+        optional("emi")
+        embeds("yacl")
+
+
+        announcementTitle = "Download from Modrinth (Fabric)"
+    }
+
+    discord {
+        webhookUrl = providers.environmentVariable("CAFETERIA_MOD_RELEASE_WEBHOOK")
+        username = "Enhanced Workbenches"
+        avatarUrl = "https://cdn.modrinth.com/data/IhBYAM6m/40c25fa8d8faec5e1a1c65834d585d4d861c15db.png"
+
+        content = changelog.map { "# Enhanced Workbenches " + (project.mod_version as String) + " has been released \n" + it}
     }
 }

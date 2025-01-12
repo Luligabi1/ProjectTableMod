@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DelegateCraftingInventory extends TransientCraftingContainer implements RecipeInput {
+public class DelegateCraftingInventory extends TransientCraftingContainer {
 
     protected AbstractContainerMenu menu;
     protected Container input;
@@ -32,11 +32,6 @@ public class DelegateCraftingInventory extends TransientCraftingContainer implem
     @Override
     public int getContainerSize() {
         return 9;
-    }
-
-    @Override
-    public int size() {
-        return getContainerSize();
     }
 
     @Override
