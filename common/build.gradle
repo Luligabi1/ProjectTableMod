@@ -18,4 +18,6 @@ dependencies {
 
 
     modCompileOnly "dev.emi:emi-xplat-intermediary:${emi_version}"
+
+    modCompileOnly "mezz.jei:jei-1.21.1-common-api-intermediary:${jei_version}"
 }

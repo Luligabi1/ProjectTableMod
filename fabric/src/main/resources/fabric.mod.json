@@ -29,6 +29,9 @@
     ],
     "rei_client": [
       "me.luligabi.enhancedworkbenches.common.client.compat.rei.EnhancedWorkbenchesReiPlugin"
+    ],
+    "jei_mod_plugin": [
+      "me.luligabi.enhancedworkbenches.common.client.compat.jei.EnhancedWorkbenchesJeiPlugin"
     ]
   },
   "mixins": [
