@@ -26,6 +26,10 @@ allprojects {
             name = "TerraformersMC (EMI)"
             url = "https://maven.terraformersmc.com/"
         }
+        maven {
+            name = "BlameJared (JEI)"
+            url = "https://maven.blamejared.com/"
+        }
     }
 }
 

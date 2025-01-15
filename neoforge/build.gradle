@@ -55,6 +55,9 @@ dependencies {
             modCompileOnly "dev.emi:emi-neoforge:${emi_version}:api"
             modLocalRuntime "dev.emi:emi-neoforge:${emi_version}"
             break
+        case "jei":
+            modLocalRuntime "mezz.jei:jei-1.21.1-neoforge:${jei_version}"
+            break
         default:
             break
     }
