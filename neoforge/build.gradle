@@ -38,7 +38,7 @@ dependencies {
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
 
     modRuntimeOnly("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-neoforge") { transitive false }
-    //include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-neoforge")
+    include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-neoforge")
     forgeRuntimeLibrary("org.quiltmc.parsers:json:0.2.1")
     forgeRuntimeLibrary("org.quiltmc.parsers:gson:0.2.1")
 

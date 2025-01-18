@@ -39,7 +39,7 @@ dependencies {
         exclude module: "fabric-api"
     }
     modRuntimeOnly("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric") { transitive false }
-    //include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric")
+    include("dev.isxander:yet-another-config-lib:${rootProject.yacl_version}-fabric")
     modRuntimeOnly("org.quiltmc.parsers:json:0.2.1")
     modRuntimeOnly("org.quiltmc.parsers:gson:0.2.1")
 
