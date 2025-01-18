@@ -2,6 +2,9 @@
   "block.enhancedworkbenches.project_table": "Bancada de Projeto",
   "block.enhancedworkbenches.crafting_station": "Estação de Trabalho",
 
+  "container.enhancedworkbenches.project_table": "Bancada de Projeto",
+  "container.enhancedworkbenches.crafting_station": "Estação de Trabalho",
+
   "yacl3.config.enhancedworkbenches:client_config.category.rendering": "Renderização",
 
   "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.rendering": "Renderização",

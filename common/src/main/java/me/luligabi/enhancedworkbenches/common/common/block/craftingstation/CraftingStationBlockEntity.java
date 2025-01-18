@@ -30,7 +30,7 @@ public class CraftingStationBlockEntity extends CraftingBlockEntity {
 
     @Override
     protected Component getContainerName() {
-        return Component.translatable("block.enhancedworkbenches.crafting_station");
+        return Component.translatable("container.enhancedworkbenches.crafting_station");
     }
 
 }

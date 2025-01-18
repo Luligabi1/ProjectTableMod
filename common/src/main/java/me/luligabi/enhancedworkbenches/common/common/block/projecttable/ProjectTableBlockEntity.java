@@ -7,7 +7,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.ContainerHelper;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -44,7 +43,7 @@ public class ProjectTableBlockEntity extends CraftingBlockEntity {
 
     @Override
     protected Component getContainerName() {
-        return Component.translatable("block.enhancedworkbenches.project_table");
+        return Component.translatable("container.enhancedworkbenches.project_table");
     }
 
     @Override

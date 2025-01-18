@@ -2,6 +2,9 @@
   "block.enhancedworkbenches.project_table": "Проєктувальний стіл",
   "block.enhancedworkbenches.crafting_station": "Ремісничий стіл",
 
+  "container.enhancedworkbenches.project_table": "Проєктувальний стіл",
+  "container.enhancedworkbenches.crafting_station": "Ремісничий стіл",
+
   "yacl3.config.enhancedworkbenches:client_config.category.rendering": "Візуалізація",
 
   "yacl3.config.enhancedworkbenches:client_config.category.rendering.group.rendering": "Візуалізація",
